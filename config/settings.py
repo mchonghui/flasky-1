@@ -4,6 +4,7 @@ DEBUG = True
 
 SERVER_NAME = 'localhost:3000'
 SECRET_KEY = 'insecurekeyfordev'
+db_uri = 'postgresql://snakeeyes:devpassword@postgres:5432/snakeeyes'
 
 '''
 # Flask-Mail.

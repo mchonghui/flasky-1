@@ -1,23 +1,25 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session, redirect, url_for, flash
 from datetime import datetime
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
+from .forms import NameForm
 
 page = Blueprint('page', __name__, template_folder='templates')
 
-class NameForm(FlaskForm):
-    name = StringField('What is your name?', validators=[Required()])
-    submit = SubmitField('Submit')
-
 @page.route('/', methods=['GET', 'POST'])
 def index():
-    name = None
     form = NameForm()
     if form.validate_on_submit():
-        name = form.name.data
-        form.name.data = ''
-    return render_template('page/index.html', form=form, name=name)
+
+        old_name = session.get('name')
+
+        if old_name is not None and old_name != form.name.data:
+            flash('Looks like you have changed your name!')
+
+        session['name'] = form.name.data
+        return redirect(url_for('page.index'))
+    return render_template('page/index.html', form=form, name=session.get('name'))
 
 @page.route('/user/<name>')
 def user(name):

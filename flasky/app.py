@@ -3,7 +3,9 @@ from flask import Flask
 from flask_bootstrap  import Bootstrap
 from flasky.blueprints.page import page
 from flask_moment import Moment
-
+from .extensions import (
+    db,
+)
 
 def create_app(settings_override=None):
     #Create a Flask application using the app factory pattern.
