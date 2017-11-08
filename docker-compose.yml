@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  website: #defines image name
+    build: . #build this image from current directory
+    command: > 
+      gunicorn -b 0.0.0.0:3000
+        --access-logfile -
+        --reload 
+        "flasky.app:create_app()"
+    environment:
+      PYTHONUNBUFFERED: 'true' #outputs to terminal in realtime
+    volumes:
+      - '.:/flasky' #take all the flask code and mount inside container flasky folder. should be same as dockerfile's INSTALL_PATH
+    ports:
+      - '3000:3000'#host:docker

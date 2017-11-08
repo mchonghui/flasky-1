@@ -1,0 +1,1 @@
+from flasky.blueprints.page.views import page
