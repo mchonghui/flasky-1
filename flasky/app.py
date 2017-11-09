@@ -20,5 +20,17 @@ def create_app(settings_override=None):
     app.register_blueprint(page)
     bootstrap = Bootstrap(app)
     moment = Moment(app)
+    
+    extensions(app)
 
     return app
+
+def extensions(app):
+    """
+    Register 0 or more extensions (mutates the app passed in).
+    :param app: Flask application instance
+    :return: None
+    """
+    db.init_app(app)
+
+    return None

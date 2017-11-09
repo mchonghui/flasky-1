@@ -1,9 +1,11 @@
 #flasky 
-chp4,page38
-10/26 Thurs
+chp5,page62
+11/08 Wed
 
 user: halvong@yahoo.com
 passwd: 12345678
+
+Database Use in View Functions
 
 #-----------------------------------
 #new project

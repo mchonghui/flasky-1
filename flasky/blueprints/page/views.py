@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, session, redirect, url_for, flash
 from datetime import datetime
-from flask_wtf import FlaskForm
+from flask_wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
 from .forms import NameForm
