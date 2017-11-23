@@ -33,13 +33,21 @@ def seed():
     
     db.session.add_all([admin_role, mod_role, user_role, user_john, user_susan, user_david])
     db.session.commit()
-
+    
+    
+def seed2():
+    user_hal = User(username='hvong', role_id=1, email="halvong@yahoo.com")
+    user_hal.password = "123"
+    db.session.add(user_hal)
+    db.session.commit()
 
 if __name__ == "__main__":
     app = create_app()
     db.app = app
-    print(app.config['SERVER_NAME'])
-    seed()
+    seed2()
+
+    #print(app.config['SERVER_NAME'])
+    #seed()
 
     #db.drop_all()
     #db.create_all()

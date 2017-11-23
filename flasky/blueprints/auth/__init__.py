@@ -1,0 +1,1 @@
+from flasky.blueprints.auth.views import auth 

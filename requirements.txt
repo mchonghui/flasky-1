@@ -28,3 +28,8 @@ WTForms-Components
 flask-debugtoolbar
 Flask-Mail
 flask-moment
+
+#Nov 22
+Werkzeug
+itsdangerous
+Flask-Login

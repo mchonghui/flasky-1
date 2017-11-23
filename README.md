@@ -1,11 +1,24 @@
 #flasky 
-chp5,page62
-11/08 Wed
+chp8,page 103
+11/23 Thurs
 
+#Registered
 user: halvong@yahoo.com
-passwd: 12345678
+passwd: 123
+
+user: halvong5@gmail.com
+passwd: 123
 
 Database Use in View Functions
+
+#run
+	1. starts postgresql
+		sudo postgresql [status, start] postresql	
+
+	2. gunicorn -b 0.0.0.0:3000 --access-logfile - "flasky.app:create_app()" 
+	
+	3. su - tom
+	   psql -d flasky
 
 #-----------------------------------
 #new project
