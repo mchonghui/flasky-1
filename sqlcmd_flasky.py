@@ -44,11 +44,8 @@ def seed2():
 if __name__ == "__main__":
     app = create_app()
     db.app = app
-    seed2()
-
-    #print(app.config['SERVER_NAME'])
-    #seed()
 
     #db.drop_all()
     #db.create_all()
     #seed()
+    seed2()

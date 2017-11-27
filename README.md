@@ -13,11 +13,19 @@ Database Use in View Functions
 
 #run
 	1. starts postgresql
-		sudo postgresql [status, start] postresql	
+		sudo systemctl status, start postgresql	
 
-	2. gunicorn -b 0.0.0.0:3000 --access-logfile - "flasky.app:create_app()" 
+	2. postgresql commands
+		su - tom
+		psql -d flasky
+		\d - show tables
+		\l - show databases
+		\c <database> - connects
+		\q - quit
+
+	3. gunicorn -b 0.0.0.0:3000 --access-logfile - "flasky.app:create_app()" 
 	
-	3. su - tom
+	4. su - tom
 	   psql -d flasky
 
 #-----------------------------------
